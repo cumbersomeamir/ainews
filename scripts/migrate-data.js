@@ -4,7 +4,7 @@ import Article from '../lib/models/Article.js'
 import Category from '../lib/models/Category.js'
 import User from '../lib/models/User.js'
 
-const MONGODB_URI = 'mongodb+srv://amir:T7ySBtTl5MxA7FKf@ainews.ufjwlfv.mongodb.net/ainews?retryWrites=true&w=majority'
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Default categories data
 const categories = [
