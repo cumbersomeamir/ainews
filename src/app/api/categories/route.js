@@ -1,7 +1,7 @@
 // app/api/categories/route.js
 import { NextResponse } from 'next/server'
-import connectToDatabase from '@/lib/mongodb'
-import Category from '@/lib/models/Category'
+import connectToDatabase from '@/../lib/mongodb'
+import Category from '@/../lib/models/Category'
 
 // GET /api/categories - Get all categories
 export async function GET() {
