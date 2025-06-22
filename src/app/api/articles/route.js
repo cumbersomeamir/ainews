@@ -6,6 +6,9 @@ import Article from '@/../lib/models/Article'
 // GET /api/articles - Get all articles with filtering
 export async function GET(request) {
   try {
+
+    console.log("=== ENV CHECK ===");
+    console.log("MONGODB_URI:", process.env.MONGODB_URI);
     await connectToDatabase()
     
     const { searchParams } = new URL(request.url)
