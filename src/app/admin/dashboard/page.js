@@ -24,7 +24,7 @@ export default function AdminDashboard() {
     setIsAdmin(true)
     fetchArticles()
   }, [router])
-  baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+  const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
   const fetchArticles = async () => {
     try {
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
   const deleteArticle = async (articleSlug) => {
     if (confirm('Are you sure you want to delete this article?')) {
       try {
-        baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+        const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
         const response = await fetch(`${baseurl}/api/articles/${articleSlug}`, {
           method: 'DELETE'
         })

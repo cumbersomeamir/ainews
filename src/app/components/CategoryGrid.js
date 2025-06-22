@@ -14,7 +14,7 @@ const CategoryGrid = () => {
   const fetchCategoriesWithArticles = async () => {
     try {
       // Fetch all articles
-      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
       const articlesResponse = await fetch(`${baseurl}/api/articles?limit=50`)
       if (!articlesResponse.ok) throw new Error('Failed to fetch articles')
       

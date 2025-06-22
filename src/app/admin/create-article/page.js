@@ -113,7 +113,7 @@ export default function CreateArticle() {
         content: contentBlocks,
         published: true
       }
-      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
       // POST to API
       const response = await fetch(`${baseurl}/api/articles`, {

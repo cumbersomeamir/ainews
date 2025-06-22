@@ -30,7 +30,7 @@ export default function ArticlePage({ params }) {
 
   const fetchArticle = async () => {
     try {
-      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
       const response = await fetch(`${baseurl}/api/articles/${slug}`)
 
       if (!response.ok) {

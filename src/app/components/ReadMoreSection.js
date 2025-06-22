@@ -13,7 +13,7 @@ const ReadMoreSection = ({ currentArticleId }) => {
 
   const fetchRelatedArticles = async () => {
     try {
-      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
       const response = await fetch(`${baseurl}/api/articles?limit=8`)
       if (!response.ok) throw new Error('Failed to fetch articles')
       

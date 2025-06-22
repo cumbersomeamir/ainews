@@ -84,7 +84,7 @@ export default function CategoryPage() {
       setCategoryInfo(category)
 
       // Fetch articles for this category
-      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
       const response = await fetch(`${baseurl}/api/articles?category=${encodeURIComponent(category.name)}&page=${currentPage}&limit=12`)
       if (!response.ok) throw new Error('Failed to fetch articles')
 
