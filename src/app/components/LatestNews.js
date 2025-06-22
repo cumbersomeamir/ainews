@@ -13,7 +13,8 @@ const LatestNews = () => {
 
   const fetchLatestArticles = async () => {
     try {
-      const response = await fetch('/api/articles?limit=6')
+      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const response = await fetch(`${baseurl}/api/articles?limit=6`)
       if (!response.ok) throw new Error('Failed to fetch articles')
       
       const data = await response.json()

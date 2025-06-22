@@ -30,8 +30,9 @@ export default function ArticlePage({ params }) {
 
   const fetchArticle = async () => {
     try {
-      const response = await fetch(`/api/articles/${slug}`)
-      
+      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+      const response = await fetch(`${baseurl}/api/articles/${slug}`)
+
       if (!response.ok) {
         if (response.status === 404) {
           notFound()

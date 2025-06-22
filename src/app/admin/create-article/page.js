@@ -113,9 +113,10 @@ export default function CreateArticle() {
         content: contentBlocks,
         published: true
       }
+      baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
       // POST to API
-      const response = await fetch('/api/articles', {
+      const response = await fetch(`${baseurl}/api/articles`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

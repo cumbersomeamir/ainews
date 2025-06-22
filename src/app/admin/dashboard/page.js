@@ -24,10 +24,11 @@ export default function AdminDashboard() {
     setIsAdmin(true)
     fetchArticles()
   }, [router])
+  baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
 
   const fetchArticles = async () => {
     try {
-      const response = await fetch('/api/articles?limit=50')
+      const response = await fetch(`${baseurl}/api/articles?limit=50`)
       if (!response.ok) throw new Error('Failed to fetch articles')
       
       const data = await response.json()
@@ -62,7 +63,8 @@ export default function AdminDashboard() {
   const deleteArticle = async (articleSlug) => {
     if (confirm('Are you sure you want to delete this article?')) {
       try {
-        const response = await fetch(`/api/articles/${articleSlug}`, {
+        baseurl= process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'
+        const response = await fetch(`${baseurl}/api/articles/${articleSlug}`, {
           method: 'DELETE'
         })
         
